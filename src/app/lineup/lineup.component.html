@@ -1,0 +1,28 @@
+<div class="container">
+  <div class="row col-md-12">
+    <div class="page-header"><h2>Your Lineups</h2></div>
+  </div>
+  <div class="row .panel-collapse table table-striped">
+    <div class="row col-md-12">
+      <div class="col-md-2"><strong>Players Name</strong></div>
+      <div class="col-md-1 col-md-offset-1"><strong>Inning 1</strong></div>
+      <div class="col-md-1"><strong>Inning 2</strong></div>
+      <div class="col-md-1"><strong>Inning 3</strong></div>
+      <div class="col-md-1"><strong>Inning 4</strong></div>
+      <div class="col-md-1"><strong>Inning 5</strong></div>
+      <div class="col-md-1"><strong>Inning 6</strong></div>
+    </div>
+    <div *ngFor="let player of activePlayers; let i=index">
+      <div class="row col-md-12">
+        <div class="col-md-2">{{player.name}}</div>
+        <div class="col-md-1 col-md-offset-1">{{ player.prefPos.posAbbr }}</div>
+        <div class="col-md-1"></div>
+        <div class="col-md-1"></div>
+        <div class="col-md-1"></div>
+        <div class="col-md-1"></div>
+        <div class="col-md-1"></div>
+      </div>
+    </div>
+
+  </div>
+</div>

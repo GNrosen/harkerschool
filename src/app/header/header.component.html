@@ -1,0 +1,10 @@
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <ul class="nav nav-tabs">
+      <li routerLinkActive="active"><a [routerLink] = "['/login']">Login</a></li>
+      <li routerLinkActive="active"><a [routerLink] = "['/signup']">Sign Up</a></li>
+      <li routerLinkActive="active"><a [routerLink] = "['/roster']">Roster List</a></li>
+      <li *ngIf="isLoggedIn()" class="navbar-right"> {{ getUser() }} <a [routerLink] = "['/logout']">Logout</a></li>
+    </ul>
+  </div>
+</nav>

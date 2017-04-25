@@ -1,0 +1,51 @@
+<div class="container">
+  <div class="row">
+    <h2 class="page-header">Your Roster</h2>
+  </div>
+  <form class="form-horizontal"
+      (ngSubmit)="buildLineUp()"
+        #lineUpForm="ngForm"
+        id="lineUpForm">
+    <div class="control-group" style="border: 1px solid black" *ngFor="let player of activePlayers">
+      <div class="row app-panel-body">
+        <div class="col-md-2">
+          {{ player.name }}
+        </div>
+        <div class="col-md-2">
+          <select name="pitching" id="pitching" class="form-control">
+            <option value="" selected>Pitcher?</option>
+            <option *ngFor="let pitcher of pitchersList" [ngValue]="pitcher" required>{{ pitcher.pitchDisplay }}</option>
+          </select>
+        </div>
+        <div class="col-md-2">
+          <select name="inningPitching" id="inningPitching" class="form-control">
+            <option value="" selected>Inning Pitching</option>
+            <option *ngFor="let inn of inningsList" [ngValue]="inn" required>{{ inn.displayInning }}</option>
+          </select>
+        </div>
+        <div class="col-md-3">
+          <select name="prefPos" id="prefPos" class="form-control">
+            <option value="" selected>Preferred Position(s)</option>
+            <option *ngFor="let pos of positionsList" [ngValue]="pos" required>{{ pos.posDisplay }}</option>
+          </select>
+        </div>
+        <div class="col-md-3">
+          <select name="noPrefPos" id="noPrefPos" class="form-control">
+            <option value="" selected>Positions to Avoid</option>
+            <option *ngFor="let pos of positionsList" [ngValue]="pos" required>{{ pos.posDisplay }}</option>
+          </select>
+
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <button class="btn-primary" (click)="buildLineUp()">Build Your Lineups</button>
+    </div>
+  </form>
+
+  <div class="row">
+    <button class="btn-danger">Add Player +</button>
+  </div>
+
+
+</div>
